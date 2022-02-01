@@ -1,0 +1,198 @@
+------------------------------------------------------------------------BUBBLE SORT-------------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    int arr[100], n, c1, c2, swap;
+    printf("enter the no of elements\n");
+    scanf("%d", &n);
+    printf("enter the integers \n");
+    for(c1 = 0; c1 < n; c1++)
+    {
+        scanf("%d", &arr[c1]);
+    }
+    for(c1 = 0; c1 < n-1; c1++)
+    {
+        for(c2 = 0; c2 < n-c1-1; c2++)
+        {
+            if (arr[c2] > arr[c2+1])
+            {
+                swap = arr[c2];
+                arr[c2] = arr[c2+1];
+                arr[c2+1] = swap;
+            }
+        }
+    }
+    printf("sorted list in ascending order\n");
+    for (c1 = 0; c1 < n; c1++)
+    {
+        printf("%d\n", arr[c1]);
+    }
+    return 0;
+}
+
+OUTPUT:
+1)
+enter the no of elements
+6
+enter the integers
+23 12 89 56 90 34
+sorted list in ascending order
+12
+23
+34
+56
+89
+90
+2)
+enter the no of elements
+4
+enter the integers
+23 67 34 90
+sorted list in ascending order
+23
+34
+67
+90
+3)
+enter the no of elements
+7
+enter the integers
+90 45 93 12 76 34 1
+sorted list in ascending order
+1
+12
+34
+45
+76
+90
+93
+----------------------------------------------------------------------------SELECTION SORT-------------------------------------------------------------------------------------
+#include<stdio.h>
+int main()
+{
+    int arr[100], n, c1, c2, temp;
+    printf("enter the no of elements\n");
+    scanf("%d", &n);
+    printf("enter the integers \n");
+    for(c1 = 0; c1 < n; c1++)
+    {
+        scanf("%d", &arr[c1]);
+    }
+    for(c1=0;c1 < n;c1++)
+    {
+        for(c2 = c1+1; c2 < n; c2++)
+        {
+           if(arr[c1] > arr[c2])
+           {
+               temp = arr[c1];
+               arr[c1] = arr[c2];
+               arr[c2] = temp;
+           }
+        }
+    }
+    printf("sorted list in ascending order\n");
+    for (c1 = 0; c1 < n; c1++)
+    {
+        printf("%d\n", arr[c1]);
+    }
+    return 0;
+}
+ OUTPUT:
+ 1)
+ enter the no of elements
+4
+enter the integers
+23 67 12 90
+sorted list in ascending order
+12
+23
+67
+90
+2)
+enter the no of elements
+5
+enter the integers
+34 23 90 45 23
+sorted list in ascending order
+23
+23
+34
+45
+90
+3)
+enter the no of elements
+6
+enter the integers
+90 34 7 56 20 18
+sorted list in ascending order
+7
+18
+20
+34
+56
+90
+-------------------------------------------------------------------------- INSERTION SORT--------------------------------------------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int arr[100], n, c1, c2, temp;
+    printf("enter the no of elements\n");
+    scanf("%d", &n);
+    printf("enter the integers \n");
+    for(c1 = 0; c1 < n; c1++)
+    {
+        scanf("%d", &arr[c1]);
+    }
+    for(c1=1;c1 < n;c1++)
+    {
+        temp = arr[c1];
+        c2 = c1 - 1;
+        while((temp < arr[c2]) && (c2 >= 0))
+        {
+            arr[c2 + 1] = arr[c2];
+            c2 = c2 -1;
+        }
+        arr[c2 + 1] = temp;
+    }
+    printf("sorted list in ascending order\n");
+    for (c1 = 0; c1 < n; c1++)
+    {
+        printf("%d\n", arr[c1]);
+    }
+    return 0;
+}
+
+OUTPUT:
+1)
+enter the no of elements
+3
+enter the integers
+78 45 89
+sorted list in ascending order
+45
+78
+89
+2)
+enter the no of elements
+5
+enter the integers
+110 36 89 67 12
+sorted list in ascending order
+12
+36
+67
+89
+110
+3)
+enter the no of elements
+6
+enter the integers
+12 10 67 45 23 19
+sorted list in ascending order
+10
+12
+19
+23
+45
+67
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
